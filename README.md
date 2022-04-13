@@ -4,8 +4,8 @@ Pocket Editor est un outil de développement portatif. Il permet aux développeu
 
 Dans ce dépôt, vous trouverez :
 - [Code du logiciel](https://github.com/Luckyluka17/Pocket-Editor/blob/main/src/)
-  - Interface
-  - Commandes
+  - [Interface](https://github.com/Luckyluka17/Pocket-Editor/blob/1.0.0/src/app.py)
+  - [Commandes](https://github.com/Luckyluka17/Pocket-Editor/blob/1.0.0/src/head.py)
 - Site Web
 
 # Aperçu
