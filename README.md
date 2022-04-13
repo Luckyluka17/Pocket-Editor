@@ -12,7 +12,10 @@ Dans ce dépôt, vous trouverez :
 ![image](https://user-images.githubusercontent.com/63603989/163213871-b182da9d-9b6e-4c1e-b783-f540d611531b.png)
 
 # Wiki
-En cours d'écriture...
+- [Accueil](https://github.com/Luckyluka17/Pocket-Editor/wiki/Accueil)
+- [Prise en main](https://github.com/Luckyluka17/Pocket-Editor/wiki/Prise-en-main)
+- [Démarrage rapide](https://github.com/Luckyluka17/Pocket-Editor/wiki/D%C3%A9marrage-rapide)
+- [A propos](https://github.com/Luckyluka17/Pocket-Editor/wiki/A-propos)
 
 # Contribuer
 Vous pouvez soutenir le projet de plusieurs façons :
