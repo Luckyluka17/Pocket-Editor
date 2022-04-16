@@ -1,6 +1,10 @@
+import pyperclip
+
 """
 Menu du haut
 """
+
+baop = ["print()"]
 
 menubar = Menu(window)
 fileBar = Menu(menubar, tearoff=0)
@@ -32,8 +36,49 @@ affBar.add_command(label="Vert", command=lambda: code.config(background="green")
 affBar.add_command(label="--------", state="disabled")
 affBar.add_command(label="Rénitialiser", command=lambda: code.config(foreground="white", background="#374140"))
 menubar.add_cascade(label="Affichage", menu=affBar)
+pytoolsBar = Menu(menubar, tearoff=0)
+pytoolsBar.add_command(label="print()", command=lambda: (
+    pyautogui.press("enter"),
+    pyperclip.copy("print()"),
+    pyautogui.hotkey('ctrl', 'v'),
+    pyautogui.press("enter")
+    ))
+pytoolsBar.add_command(label="input()", command=lambda: (
+    pyautogui.press("enter"),
+    pyperclip.copy("input()"),
+    pyautogui.hotkey('ctrl', 'v'),
+    pyautogui.press("enter")
+))
+pytoolsBar.add_command(label="def()", command=lambda: (
+    pyautogui.press("enter"),
+    pyperclip.copy("def maFonction(arg):"),
+    pyautogui.hotkey('ctrl', 'v'),
+    pyautogui.press("enter"),
+    pyautogui.press("tab"),
+    pyautogui.write("// Entrez votre code ici"),
+    pyautogui.press("enter")
+))
+pytoolsBar.add_command(label="for", command=lambda: (
+    pyautogui.press("enter"),
+    pyperclip.copy("for i in range(1, 3):"),
+    pyautogui.hotkey('ctrl', 'v'),
+    pyautogui.press("enter"),
+    pyautogui.press("tab"),
+    pyautogui.write("// Entrez votre code ici"),
+    pyautogui.press("enter")
+))
+pytoolsBar.add_command(label="while", command=lambda: (
+    pyautogui.press("enter"),
+    pyperclip.copy("while i < 3:"),
+    pyautogui.hotkey('ctrl', 'v'),
+    pyautogui.press("enter"),
+    pyautogui.press("tab"),
+    pyautogui.write("// Entrez votre code ici"),
+    pyautogui.press("enter"),
+))
+menubar.add_cascade(label="Boite à outils Python", menu=pytoolsBar)
 runBar = Menu(menubar, tearoff=0)
-runBar.add_command(label="Executer le script", command=lambda: messagebox.showwarning("Pocket Editor", "Fonctionnalité non disponible !\nActuellement en développement."))
+runBar.add_command(label="Executer le script", command=executer)
 runBar.add_command(label="Executer dans un terminal", command=lambda: os.startfile("cmd.exe"))
 menubar.add_cascade(label="Executer", menu=runBar)
 helpMenu = Menu(menubar, tearoff=0)
@@ -43,5 +88,5 @@ helpMenu.add_command(label="Discord", command=lambda: web.open("https://discord.
 helpMenu.add_command(label="YouTube", command=lambda: web.open("https://www.youtube.com/channel/UC-rPcYTZqLCOEkloQFXwgnQ"))
 helpMenu.add_command(label="GitHub", command=lambda: web.open("https://github.com/luckyluka17"))
 helpMenu.add_command(label="--------", state="disabled")
-helpMenu.add_command(label="A propos", command=lambda: messagebox.showinfo("Pocket Editor", "Pocket Editor est un logiciel de développement de scripts.\n\nIl a été développé par Luckyluka17."))
+helpMenu.add_command(label="A propos", command=lambda: messagebox.showinfo("Pocket Editor", "Pocket Editor est un logiciel de développement de scripts Python.\n\nIl a été développé par Luckyluka17."))
 menubar.add_cascade(label="Aide", menu=helpMenu)

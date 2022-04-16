@@ -1,6 +1,7 @@
+![Discord](https://img.shields.io/discord/945270551923019786?color=%237289DA&label=Discord&logoColor=%237289DA) ![GitHub language count](https://img.shields.io/github/languages/count/luckyluka17/Pocket-editor) ![GitHub Repo stars](https://img.shields.io/github/stars/luckyluka17/pocket-editor?style=social)
 # ![](https://github.com/Luckyluka17/Pocket-Editor/blob/main/img/Pocket%20Editor%20banner.png)
 
-Pocket Editor est un outil de développement portatif. Il permet aux développeurs de pouvoir éditer leur code. Cet éditeur peut être mis sur une clé USB ou sur un ordinateur qui ne possède pas Python.
+Pocket Editor est un outil de développement léger. Il permet aux développeurs de pouvoir éditer leur code Python & de l'executer. avec sa boîte à outil Python, vous trouverez les ressources necessaires à l'amélioration de votre code et, elle est aussi pratique pour les débutants. 
 
 Dans ce dépôt, vous trouverez :
 - [Code du logiciel](https://github.com/Luckyluka17/Pocket-Editor/blob/main/src/)

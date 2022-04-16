@@ -4,39 +4,55 @@ import codecs
 import webbrowser as web
 from tkinter import *
 from tkinter import filedialog, messagebox
+import pyautogui
+from pypresence import Presence
 
 try:
-    import pyautogui
+    RPC = Presence("964835207997952020")
+    RPC.connect()
+    RPC.update(
+        state="Utilise Pocket Editor",
+        details="Édite un fichier en Python",
+        large_image="logo",
+        small_image="py",
+        large_text="Version 1.0.1",
+        small_text="Python",
+        start=time.time(),
+        buttons=[{"label": "Télécharger", "url": "https://github.com/Luckyluka17/Pocket-Editor/releases"}, {"label": "Discord", "url": "https://discord.gg/qFfYvKHR5B"}]
+    )
 except:
-    messagebox.showerror('Pocket Editor', "Une erreur est survenue, un module est manquant !\n\nPour l'installer, exécutez le script 'install.py'.")
-    exit()
+    pass
 
 file = None
 nameoffile = []
 
 # Commandes
 def nouv():
-    os.system("echo //Pocket Editor >script.ks")
-    messagebox.showinfo("Kshell IDE", "Nouveau fichier créé ! Pour y accèder, ouvrez le dans l'éditeur.")
+    os.system("echo //Pocket Editor >script.py")
+    messagebox.showinfo("Pocket Editor", "Nouveau fichier créé ! Pour y accèder, ouvrez le dans l'éditeur.")
 
 def ouvrir():
-    file = filedialog.askopenfile(parent=window, mode='rb', title='Sélectionnez un fichier')
+    file = filedialog.askopenfile(parent=window, mode='rb', title='Sélectionnez un fichier', defaultextension=".py", filetypes=[("Python", "*.py")])
     if file != None:
         code.delete(1.0, END)
         code.insert(1.0, file.read())
+        test = file
         file.close()
         window.title(f"Pocket Editor - {file.name}")
     else:
         messagebox.showwarning("Pocket Editor", "Aucun fichier sélectionné !")
 
 def save():
-    file = filedialog.asksaveasfile(mode='w', defaultextension=".txt", filetypes=[("Fichier texte", "*.txt"), ("Javascript", "*.js"), ("Python", "*.py"), ("Kshell", "*.ks")])
+    file = filedialog.asksaveasfile(mode='w', defaultextension=".txt", filetypes=[("Python", "*.py")])
     if file != None:
         file.write(code.get(1.0, END))
         file.close()
         messagebox.showinfo("Pocket Editor", "Fichier enregistré !")
     else:
         messagebox.showwarning("Pocket Editor", "Aucun fichier sélectionné !")
+
+def executer():
+   os.system(f"py -3 {file.name}")
 
 window = Tk()
 
