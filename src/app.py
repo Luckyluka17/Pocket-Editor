@@ -52,7 +52,8 @@ def save():
         messagebox.showwarning("Pocket Editor", "Aucun fichier sélectionné !")
 
 def executer():
-   os.system(f"py -3 {file.name}")
+    from execute import nom
+    exec(codecs.open("execute.py", "r", "utf-8").read())
 
 window = Tk()
 
