@@ -39,42 +39,15 @@ menubar.add_cascade(label="Affichage", menu=affBar)
 pytoolsBar = Menu(menubar, tearoff=0)
 pytoolsBar.add_command(label="print()", command=lambda: (
     pyautogui.press("enter"),
-    pyperclip.copy("print()"),
-    pyautogui.hotkey('ctrl', 'v'),
-    pyautogui.press("enter")
-    ))
+    code.insert(END, "print()")
+))
 pytoolsBar.add_command(label="input()", command=lambda: (
     pyautogui.press("enter"),
-    pyperclip.copy("input()"),
-    pyautogui.hotkey('ctrl', 'v'),
-    pyautogui.press("enter")
+    code.insert(END, "input()")
 ))
 pytoolsBar.add_command(label="def()", command=lambda: (
     pyautogui.press("enter"),
-    pyperclip.copy("def maFonction(arg):"),
-    pyautogui.hotkey('ctrl', 'v'),
-    pyautogui.press("enter"),
-    pyautogui.press("tab"),
-    pyautogui.write("// Entrez votre code ici"),
-    pyautogui.press("enter")
-))
-pytoolsBar.add_command(label="for", command=lambda: (
-    pyautogui.press("enter"),
-    pyperclip.copy("for i in range(1, 3):"),
-    pyautogui.hotkey('ctrl', 'v'),
-    pyautogui.press("enter"),
-    pyautogui.press("tab"),
-    pyautogui.write("// Entrez votre code ici"),
-    pyautogui.press("enter")
-))
-pytoolsBar.add_command(label="while", command=lambda: (
-    pyautogui.press("enter"),
-    pyperclip.copy("while i < 3:"),
-    pyautogui.hotkey('ctrl', 'v'),
-    pyautogui.press("enter"),
-    pyautogui.press("tab"),
-    pyautogui.write("// Entrez votre code ici"),
-    pyautogui.press("enter"),
+    code.insert(END, "def maFonction():")
 ))
 menubar.add_cascade(label="Boite à outils Python", menu=pytoolsBar)
 runBar = Menu(menubar, tearoff=0)
